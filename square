@@ -18,8 +18,8 @@ glFlush();
 }
 int main(int c,char *v[])
 {
-glutInit(lc,v)
-glutInitwindowPosition(100,100);
+glutInit(&c,v);
+glutInitWindowPosition(100,100);
 glutInitWindowSize(400,400);
 glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
 glutCreateWindow("FirstWindow");
