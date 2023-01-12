@@ -6,10 +6,9 @@ void init()
 glClear(GL_COLOR_BUFFER_BIT);
 glClearColor(0,0,0,1);
 glColor3f(1,0,1);
-gluOrtho2D(-500,500,-500,500); // Left,right,bottom,top
-// Polygon Default
-parr[0] = 10; //x
-parr[1] = 10; //y
+gluOrtho2D(-500,500,-500,500);
+parr[0] = 10;
+parr[1] = 10;
 parr[2] = 200;
 parr[3] = 10;
 parr[4] = 150;
@@ -35,14 +34,13 @@ glVertex2f(-500,0);
 glVertex2f(500,0);
 glVertex2f(0,500);
 glVertex2f(0,-500);
-glEnd();
-glColor3f(1,0,0);
+glEnd();glColor3f(1,0,0);
 glBegin(GL_POINTS);
 glVertex2f(0,0);
 glEnd();
 glFlush();
 }
-// Shearing About X-Axis void shearing_x()
+void shearing_x()
 {
 int shx = 2;
 for(int i=0;i<6;i=i+2)
@@ -51,7 +49,7 @@ parr[i] = parr[i] + shx*parr[i+1];
 }
 polygon();
 }
-// Shearing About Y-Axis void shearing_y()
+void shearing_y()
 {
 int shy = 2;
 for(int i=1;i<6;i=i+2)
@@ -73,8 +71,7 @@ case 7: shearing_y();
 break;
 }
 }
-int main(int argc,char **argv)
-{
+int main(int argc,char **argv){
 glutInit(&argc,argv);
 glutInitWindowSize(500,500);
 glutInitWindowPosition(100,100);
