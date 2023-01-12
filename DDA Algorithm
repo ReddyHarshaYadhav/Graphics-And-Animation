@@ -1,13 +1,14 @@
-
 #include<GL/glut.h>
 #include<stdlib.h>
 #include<stdio.h>
 float x1,x2,y1,y2;
 void display(void)
 {
-float dy,dx,step,x,y,k,Xin,Yin; dx=x2-x1;
+float dy,dx,step,x,y,k,Xin,Yin;
+dx=x2-x1;
 dy=y2-y1;
-if(abs(dx)> abs(dy)) {
+if(abs(dx)> abs(dy))
+{
 step = abs(dx);
 }
 else
@@ -19,23 +20,23 @@ y=y1;
 glBegin(GL_POINTS);
 glVertex2i(x,y);
 glEnd();
-for (k=1 ;k<=step;k++) {
+for (k=1 ;k<=step;k++)
+{
 x= x + Xin;
 y= y + Yin;
 glBegin(GL_POINTS);
 glVertex2i(x,y);
 glEnd();
 }
-glFlush(); }
+glFlush();
+}
 void init(void)
 {
 glClearColor(0.7,0.7,0.7,0.7);
 glMatrixMode(GL_PROJECTION);
 glLoadIdentity();
 gluOrtho2D(-100,100,-100,100);
-}
-int main(int argc, char** argv)
-{
+}int main(int argc, char** argv) {
 printf("Enter the value of x1 : ");
 scanf("%f",&x1);
 printf("Enter the value of y1 : ");
